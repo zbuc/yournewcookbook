@@ -52,7 +52,7 @@ The application layout is as such:
     │   └── ingredient.less
     ├── make.sh
     ├── README.md
-    ├── \_site
+    ├── _site
     │   ├── css.css
     │   ├── index.html
     │   └── js.js
@@ -60,9 +60,9 @@ The application layout is as such:
         ├── ingredient.html
         └── recipe.html
 
-*The \_site directory is the build directory and contains only built
+**The \_site directory is the build directory and contains only built
 code. The workflow is to make changes in the general project directories,
-run `make.sh`, and then open the built application in \_site/.*
+run `make.sh`, and then open the built application in \_site/.**
 
 ### index.html
 index.html is the base template for the application. It contains references
