@@ -53,3 +53,6 @@ mv _site/js.big.js _site/js.js
 echo "Compiling LESS..."
 lessc _site/less.less > _site/css.css
 rm _site/less.less
+
+echo "Copying images..."
+cp -r img _site/img
