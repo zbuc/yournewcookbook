@@ -35,7 +35,8 @@ done < "$INDEX"
 
 echo "Minifying JS..."
 uglifyjs _site/js.big.js > _site/js.js
-rm _site/js.big.js
+#rm _site/js.big.js
+mv _site/js.big.js _site/js.js
 
 echo "Compiling LESS..."
 lessc _site/less.less > _site/css.css

@@ -5,15 +5,19 @@
         [JS]
             common/json2
             common/jquery
+            common/jquery-couch
+            common/jquery-couchLogin
             common/underscore
             common/backbone
-            common/backbone-localstorage
+            common/backbone-couchdb
 
-            todo/model
-            todo/collection
-            todo/view
+            setup
 
-            todos
+            ingredient/model
+            ingredient/collection
+            ingredient/view
+
+            yournewcookbook
         [/JS]
 
         [LESS]
@@ -22,47 +26,34 @@
     </head>
 
     <body>
-        <div id="todoapp">
+        <div id="yournewcookbookapp">
             <div class="title">
-                <h1>Todos</h1>
+                <h1>yournewcookbook</h1>
             </div>
 
             <div class="content">
-                <div id="create-todo">
-                    <input id="new-todo" placeholder="What needs to be done?" type="text" />
-                    <span class="ui-tooltip-top" style="display:none;">Press Enter to save this task</span>
+                <div id="create-ingredient">
+                    <input id="new-ingredient" placeholder="Add a new ingredient" type="text" />
+                    <span class="ui-tooltip-top" style="display:none;">Press Enter to save this ingredient</span>
                 </div>
 
-                <div id="todos">
-                    <ul id="todo-list"></ul>
+                <div id="ingredients">
+                    <ul id="ingredient-list"></ul>
                 </div>
-
-                <div id="todo-stats"></div>
             </div>
-        </div>
-
-        <ul id="instructions">
-            <li>Double-click to edit a todo.</li>
-            <li><a href="../../docs/todos.html">View the annotated source.</a></li>
-        </ul>
-
-        <div id="credits">
-            Created by
-            <br />
-            <a href="http://jgn.me/">J&eacute;r&ocirc;me Gravel-Niquet</a>
         </div>
 
         <!-- Templates -->
 
-        <script type="text/template" id="item-template">
-            <div class="todo <%= done ? 'done' : '' %>">
+        <script type="text/template" id="ingredient-template">
+            <div class="ingredient <%= onhand ? 'onhand' : '' %>">
                 <div class="display">
-                    <input class="check" type="checkbox" <%= done ? 'checked="checked"' : '' %> />
-                    <div class="todo-text"></div>
-                    <span class="todo-destroy"></span>
+                    <input class="check" type="checkbox" <%= onhand ? 'checked="checked"' : '' %> />
+                    <div class="ingredient-text"></div>
+                    <span class="ingredient-destroy"></span>
                 </div>
                 <div class="edit">
-                    <input class="todo-input" type="text" value="" />
+                    <input class="ingredient-input" type="text" value="" />
                 </div>
             </div>
         </script>
