@@ -13,8 +13,10 @@ while read line; do
     if [ "$line" == "[/JS]" ]; then
         jsflag=0
     elif [ $jsflag == 1 ]; then
-        echo "    Including $line"
-        cat js/$line.js >> _site/js.big.js
+        if [ "$line" != "" ]; then
+            echo "    Including $line"
+            cat js/$line.js >> _site/js.big.js
+        fi
     elif [ "$line" == "[JS]" ]; then
         jsflag=1
         echo "<script type='text/javascript' src='js.js'></script>" >> _site/index.html
