@@ -1,0 +1,19 @@
+<script type="text/template" id="ingredient-template">
+    <div class="ingredient <%= onhand ? 'onhand' : '' %>">
+        <div class="display">
+            <input class="check" type="checkbox" <%= onhand ? 'checked="checked"' : '' %> />
+            <div class="ingredient-text"></div>
+            <span class="ingredient-destroy">x</span>
+        </div>
+        <div class="edit">
+            <input class="ingredient-quantity" type="text" value="" />
+            <select class="ingredient-measurement">
+                <option value="">--</option>
+                <option value="Tbsp">Tbsp</option>
+                <option value="tsp">tsp</option>
+                <option value="cup">cup</option>
+            </select>
+            <input class="ingredient-input" type="text" value="" />
+        </div>
+    </div>
+</script>

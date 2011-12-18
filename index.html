@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Backbone Demo: Todos</title>
+        <title>Your New Cookbook</title>
         [JS]
             common/json2
             common/jquery
@@ -21,7 +21,10 @@
         [/JS]
 
         [LESS]
-            layout
+            common/reset
+            common/layout
+
+            ingredient
         [/LESS]
     </head>
 
@@ -32,47 +35,25 @@
             </div>
 
             <div class="content">
-                <div id="create-ingredient">
-                    <input id="new-ingredient" placeholder="Add a new ingredient" type="text" />
-                    <span class="ui-tooltip-top" style="display:none;">Press Enter to save this ingredient</span>
-                </div>
+                <div id="ingredients_container">
+                    <h2>Ingredients</h2>
 
-                <div id="ingredients">
-                    <ul id="ingredient-list"></ul>
+                    <div id="ingredients">
+                        <ul id="ingredient-list"></ul>
+                    </div>
+
+                    <div id="create-ingredient">
+                        <input id="new-ingredient" placeholder="Add a new ingredient" type="text" />
+                        <span class="ui-tooltip-top" style="display:none;">Press Enter to save this ingredient</span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Templates -->
-
-        <script type="text/template" id="ingredient-template">
-            <div class="ingredient <%= onhand ? 'onhand' : '' %>">
-                <div class="display">
-                    <input class="check" type="checkbox" <%= onhand ? 'checked="checked"' : '' %> />
-                    <div class="ingredient-text"></div>
-                    <span class="ingredient-destroy"></span>
-                </div>
-                <div class="edit">
-                    <input class="ingredient-input" type="text" value="" />
-                </div>
-            </div>
-        </script>
-
-        <script type="text/template" id="stats-template">
-            <% if (total) { %>
-                <span class="todo-count">
-                    <span class="number"><%= remaining %></span>
-                    <span class="word"><%= remaining == 1 ? 'item' : 'items' %></span> left.
-                </span>
-            <% } %>
-            <% if (done) { %>
-                <span class="todo-clear">
-                    <a href="#">
-                        Clear <span class="number-done"><%= done %></span>
-                        completed <span class="word-done"><%= done == 1 ? 'item' : 'items' %></span>
-                    </a>
-                </span>
-            <% } %>
-        </script>
+        [TEMPLATES]
+            ingredient
+            stats
+        [/TEMPLATES]
     </body>
 </html>

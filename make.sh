@@ -8,13 +8,14 @@ mkdir -p $BASEDIR
 
 jsflag=0
 lessflag=0
-echo "Gathering JS and LESS..."
+templateflag=0
+echo "Gathering JS and LESS and processing templates..."
 while read line; do
     if [ "$line" == "[/JS]" ]; then
         jsflag=0
     elif [ $jsflag == 1 ]; then
         if [ "$line" != "" ]; then
-            echo "    Including $line"
+            echo "    Including JS $line"
             cat js/$line.js >> _site/js.big.js
         fi
     elif [ "$line" == "[JS]" ]; then
@@ -23,11 +24,22 @@ while read line; do
     elif [ "$line" == "[/LESS]" ]; then
         lessflag=0
     elif [ $lessflag == 1 ]; then
-        echo "    Including $line"
-        cat less/$line.less >> _site/less.less
+        if [ "$line" != "" ]; then
+            echo "    Including LESS $line"
+            cat less/$line.less >> _site/less.less
+        fi
     elif [ "$line" == "[LESS]" ]; then
         lessflag=1
         echo "<link href='css.css' rel='stylesheet' type='text/css'>" >> _site/index.html
+    elif [ "$line" == "[/TEMPLATES]" ]; then
+        templateflag=0
+    elif [ $templateflag == 1 ]; then
+        if [ "$line" != "" ]; then
+            echo "    Including template $line"
+            cat templates/$line.html >> _site/index.html
+        fi
+    elif [ "$line" == "[TEMPLATES]" ]; then
+        templateflag=1
     else
         echo "$line" >> _site/index.html
     fi
