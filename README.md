@@ -1,1 +1,4 @@
-yournewcookbook v0.0
+YourNewCookBook.com
+===================
+
+This will eventually be something.
