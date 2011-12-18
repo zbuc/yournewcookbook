@@ -30,10 +30,6 @@
 
     <body>
         <div id="yournewcookbookapp">
-            <div class="title">
-                <h1>yournewcookbook</h1>
-            </div>
-
             <div class="content">
                 <div id="ingredients_container">
                     <h2>Ingredients</h2>
@@ -43,10 +39,19 @@
                     </div>
 
                     <div id="create-ingredient">
+                        <input class="ingredient-quantity" type="text" value="" />
+                        <select class="ingredient-measurement">
+                            <option value="">--</option>
+                            <option value="Tbsp">Tbsp</option>
+                            <option value="tsp">tsp</option>
+                            <option value="cup">cup</option>
+                        </select>
                         <input id="new-ingredient" placeholder="Add a new ingredient" type="text" />
                         <span class="ui-tooltip-top" style="display:none;">Press Enter to save this ingredient</span>
                     </div>
                 </div>
+
+                <span class="side">&nbsp;</span>
             </div>
         </div>
 
