@@ -28,7 +28,7 @@ root directory of the application.
 
 If you have all prerequisites available on your PATH, you should
 just be able to run `./make.sh` and it will create a new \_site/
-directory containing the "ready" site. Loading \_site/index.html
+directory containing the deployable site. Loading \_site/index.html
 in your web browser should work if your CouchDB instance and web
 server is configured properly.
 
