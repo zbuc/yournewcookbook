@@ -1,6 +1,12 @@
 YourNewCookBook.com
 ===================
 
+Contributing
+------------
+
+We are using [this GIT branching model](http://nvie.com/posts/a-successful-git-branching-model/) for
+development and deployment. **Read this if you're going to help out.**
+
 Prerequisites
 -------------
 
