@@ -1,6 +1,32 @@
 (function ($) {
 
     $(function(){
+        var recenter = function(e){
+            var wHeight = $(window).height();
+            var wWidth = $(window).width();
+            var aHeight = $('#yournewcookbookapp').height();
+            var aWidth = $('#yournewcookbookapp').width();
+            
+            var ync = $("#yournewcookbookapp");
+    
+            //if(aWidth < wWidth){
+                // app smaller than window
+                // no need to resize
+                //$("#yournewcookbookapp").css('left', 
+            //}
+
+            //if(aHeight < wHeight){
+                console.log("wHeight:"+wHeight);
+                console.log("wWidth:"+wWidth);
+                console.log("aHeight:"+aHeight);
+                console.log("aWidth:"+aWidth);
+                ync.css('margin-top', -0.5 * aHeight);
+                ync.css('margin-left', (wWidth - aWidth)/2);
+            //}
+        };
+
+        $(window).bind('resize', recenter);
+
         var Ingredients = window.collections.Ingredients;
 
         window.AppView = Backbone.View.extend({
@@ -42,5 +68,7 @@
             }
         });
         window.App = new AppView;
+
+        recenter();
     });
 })(jQuery);
