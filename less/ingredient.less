@@ -1,0 +1,43 @@
+div#ingredients_container {
+    width: 400px;
+    margin: auto;
+
+    span.ingredient-destroy {
+        position: relative;
+        top: -16px;
+        float: right;
+        right: 204px;
+    }
+
+    input.check {
+        float: left;
+    }
+
+    ul#ingredient-list {
+        & > li {
+            clear: both;
+        }
+
+        > li.editing {
+            div.display {
+                display: none;
+            }
+
+            div.edit {
+                display: block;
+            }
+        }
+    }
+
+    div.display {
+        display: block;
+    }
+
+    div.edit {
+        display: none;
+    }
+}
+
+input.ingredient-quantity {
+    width: 20px;
+}
