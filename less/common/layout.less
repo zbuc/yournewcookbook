@@ -1,50 +1,64 @@
+@minheight: 600px;
+@minwidth: 800px;
+@maxwidth: 1600px;
+@sidebarwidth: 50px;
+
+.box-shadow {
+    -moz-box-shadow: -2px 2px 46px #888;
+    -webkit-box-shadow: -2px 2px 46px #888;
+    box-shadow: -2px 2px 46px #888;
+}
+
+body {
+    background: url('img/patterns/goovepaper.png');
+    font-family: 'junctionregularRegular';
+    text-align: center;
+    font-size: 24px;
+}
+
+div#yournewcookbookapp {
+    width: 1000px;
+    margin: auto;
+    color: #222;
+    &.recipe {
+        background: url('img/patterns/lined_paper.png');
+    }
+}
+
 div.content {
-    min-width: 800px;
-    max-width: 1600px;
-    margin: auto;
-}
-
-h1, h2 {
-    font-weight: bold;
-}
-
-div#ingredients_container {
-    width: 400px;
+    min-width: @minwidth;
+    max-width: @maxwidth;
     margin: auto;
 
-    span.ingredient-destroy {
-        position: relative;
-        top: -16px;
-        float: right;
-        right: 204px;
+    line-height: 1.24em;
+
+    padding-left: @sidebarwidth + 25;
+
+    h1, h2 {
+        font-weight: bold;
     }
 
-    input.check {
+    h1 {
+        font-size: 225%;
+        text-align: center;
+        line-height: 100%;
+    }
+
+    &, & div.side {
+        min-height: @minheight;
+        .box-shadow;
+    }
+
+
+    div.side {
+        margin-left: -@sidebarwidth - 25;
+        width: @sidebarwidth;
         float: left;
-    }
-
-    ul#ingredient-list {
-        & > li {
-            clear: both;
-        }
-
-        > li.editing {
-            div.display {
-                display: none;
-            }
-
-            div.edit {
-                display: block;
-            }
-        }
-    }
-
-    div.display {
-        display: block;
-    }
-
-    div.edit {
-        display: none;
+        clear: none;
+        background: url('img/patterns/dark_leather.png');
+        position: absolute;
+        top: 0;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
     }
 }
-
