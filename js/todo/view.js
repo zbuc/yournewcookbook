@@ -3,7 +3,7 @@
     $(function(){
         window.TodoView = Backbone.View.extend({
             tagName: "li",
-            template: _.template($('#item-template').html()),
+            template: _.template($('#todo-template').html()),
             events: {
                 "click .check": "toggleDone",
                 "dblclick div.todo-text": "edit",
