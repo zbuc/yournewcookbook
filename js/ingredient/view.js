@@ -28,7 +28,7 @@
 
                 this.$('.ingredient-text').text(quantity + " " + measurement + " " + text);
 
-                this.inputs.bind('blur', _.bind(this.closeIfNotEditing, this));
+                //this.inputs.bind('blur', _.bind(this.closeIfNotEditing, this));
                 this.getInput('.ingredient-input').val(text);
                 this.getInput('.ingredient-quantity').val(quantity);
                 this.getInput('.ingredient-measurement').val(measurement);
@@ -39,6 +39,7 @@
             edit: function() {
                 $(this.el).addClass("editing");
                 this.getInput('.ingredient-input').focus();
+                $('html').unbind('click.ingredients').bind('click.ingredients', _.bind(this.closeIfNotEditing, this));
             },
             close: function() {
                 this.model.save({
@@ -48,10 +49,13 @@
                 });
 
                 $(this.el).removeClass("editing");
+                $('html').unbind('click.ingredients');
             },
             closeIfNotEditing: function(e) {
-                console.log(e);
-                console.log($(e.currentTarget));
+                // if what they clicked on wasn't one of our inputs...
+                if(!this.inputs.filter($(e.toElement)).length){
+                    this.close();
+                }
             },
             updateOnEnter: function(e) {
                 if (e.keyCode == 13) this.close();
