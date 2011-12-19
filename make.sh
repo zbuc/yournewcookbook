@@ -30,7 +30,7 @@ while read line; do
         fi
     elif [ "$line" == "[LESS]" ]; then
         lessflag=1
-        for n in `ls css/*.css`; do echo "<link href='$n' rel='stylesheet' type='text/css'>" >> _site/index.html; done
+        for n in `ls css/*.css css/**/*.css`; do echo "<link href='$n' rel='stylesheet' type='text/css'>" >> _site/index.html; done
         echo "<link href='css.css' rel='stylesheet' type='text/css'>" >> _site/index.html
     elif [ "$line" == "[/TEMPLATES]" ]; then
         templateflag=0
@@ -56,3 +56,6 @@ cp -r img _site/img
 
 echo "Copying CSS..."
 cp -r css _site/css
+
+echo "Copying fonts..."
+cp -r fonts _site/fonts
