@@ -7,7 +7,7 @@
 
         Backbone.couch_connector.config.db_name = "yournewcookbook";
         Backbone.couch_connector.config.ddoc_name = "yournewcookbook";
-        Backbone.couch_connector.config.global_changes = true;
+        Backbone.couch_connector.config.global_changes = false;
         Backbone.couch_connector.config.base_url = "couchdb";
 
         // set up some input field finding utility methods
