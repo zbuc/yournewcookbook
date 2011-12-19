@@ -1,4 +1,4 @@
-@minheight: 600px;
+@height: 1600px;
 @minwidth: 800px;
 @maxwidth: 1600px;
 @sidebarwidth: 50px;
@@ -9,19 +9,45 @@
     box-shadow: -2px 2px 46px #888;
 }
 
+.box-shadow-subtle {
+    -moz-box-shadow: 0 0 17px #888;
+    -webkit-box-shadow: 0 0 17px #888;
+    box-shadow: 0 0 17px #888;
+}
+
 body {
     background: url('img/patterns/goovepaper.png');
-    font-family: 'junctionregularRegular';
+    font-family: 'junctionregularRegular', Arial, sans-serif;
     text-align: center;
-    font-size: 24px;
+    font-size: 29px;
 }
 
 div#yournewcookbookapp {
     width: 1000px;
     margin: auto;
     color: #222;
+    position: absolute;
+    top: 50%;
+    margin-top: -.5 * @height;
+    margin-left: .5 * @minwidth;
     &.recipe {
         background: url('img/patterns/lined_paper.png');
+        background-attachment: scroll;
+        
+        & .recipe-description {
+            margin-bottom: 30px;
+            line-height: 1.15em;
+            font-size: .95em;
+            padding-top: 11px;
+        }
+
+        & .recipe-image {
+            height: 149px;
+            float: left;
+            margin-left: 43px;
+            margin-top: 6px;
+            .box-shadow;
+        }
     }
 }
 
@@ -29,10 +55,12 @@ div.content {
     min-width: @minwidth;
     max-width: @maxwidth;
     margin: auto;
+    position: relative;
 
     line-height: 1.24em;
 
     padding-left: @sidebarwidth + 25;
+    padding-right: @sidebarwidth + 25;
 
     h1, h2 {
         font-weight: bold;
@@ -45,7 +73,8 @@ div.content {
     }
 
     &, & div.side {
-        min-height: @minheight;
+        max-height: @height;
+        min-height: 600px;
         .box-shadow;
     }
 
@@ -60,5 +89,7 @@ div.content {
         top: 0;
         border-bottom-left-radius: 3px;
         border-bottom-right-radius: 3px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
     }
 }
