@@ -26,7 +26,7 @@ while read line; do
     elif [ $lessflag == 1 ]; then
         if [ "$line" != "" ]; then
             echo "    Including LESS $line"
-            echo `lessc "less/$line.less"` >> $BASEDIR/css.css
+            lessc "less/$line.less" >> $BASEDIR/css.css
         fi
     elif [ "$line" == "[LESS]" ]; then
         lessflag=1
