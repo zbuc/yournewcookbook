@@ -1,7 +1,39 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
     <head>
+        <meta charset="utf-8">
         <title>Your New Cookbook</title>
+        <meta name="description" content="Your New Cookbook">
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        [LESS]
+            common/skeleton_base
+            common/skeleton
+            common/skeleton_layout
+
+            common/fonts
+            
+            common/layout
+
+            ingredient
+            recipe
+        [/LESS]
+
+
+        <!-- Favicons
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+        -->
+
         [JS]
             common/json2
             common/jquery
@@ -19,22 +51,25 @@
 
             yournewcookbook
         [/JS]
-
-        [LESS]
-            common/fonts
-            common/layout
-
-            ingredient
-        [/LESS]
     </head>
 
     <body>
-        <div id="yournewcookbookapp" class="recipe">
-            <div class="content">
+        <div id="yournewcookbookapp" class="recipe container">
+            <div class="two columns sidebar">
+                <nav>
+                    <h3 id="logo">:)</h3>
+                    <ul>
+                        <li><a href="">:)</a></li>
+                    </ul>
+                </nav>
+                &nbsp;
+            </div>
+
+            <div class="fourteen columns content">
                 <h1>Omelette</h1>
 
                 <p class="recipe-description">An omelette is something that everybody should know how to cook well. Play with the toppings.</p>
-                <img class="recipe-image" src="img/recipes/omelette.jpg"/>
+                <img class="recipe-image" src="img/recipes/omelette.jpg" style="width: 125px;"/>
 
                 <div id="ingredients_container">
                     <h2>Ingredients</h2>
@@ -55,8 +90,6 @@
                         <span class="ui-tooltip-top" style="display:none;">Press Enter to save this ingredient</span>
                     </div>
                 </div>
-
-                <div class="side">&nbsp;</div>
             </div>
         </div>
 

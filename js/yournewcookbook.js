@@ -16,12 +16,14 @@
             //}
 
             //if(aHeight < wHeight){
-                console.log("wHeight:"+wHeight);
+                /*console.log("wHeight:"+wHeight);
                 console.log("wWidth:"+wWidth);
                 console.log("aHeight:"+aHeight);
                 console.log("aWidth:"+aWidth);
                 ync.css('margin-top', -0.5 * aHeight);
                 ync.css('margin-left', (wWidth - aWidth)/2);
+                */
+                ync.find('.content').css('height', wHeight);
             //}
         };
 
@@ -69,6 +71,6 @@
         });
         window.App = new AppView;
 
-        recenter();
+        setTimeout(recenter, 1);
     });
 })(jQuery);

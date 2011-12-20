@@ -1,7 +1,8 @@
 @height: 1600px;
 @minwidth: 800px;
 @maxwidth: 1600px;
-@sidebarwidth: 50px;
+@sidebarwidth: 100px;
+@base_fontsize: 47px;
 
 .box-shadow {
     -moz-box-shadow: -2px 2px 46px #888;
@@ -17,28 +18,36 @@
 
 body {
     background: url('img/patterns/goovepaper.png');
-    font-family: 'junctionregularRegular', Arial, sans-serif;
     text-align: center;
-    font-size: 29px;
+    font-size: @base_fontsize;
+    font-family: "junctionregularRegular", "Helvetica", "Arial", "sans-serif";
+    text-shadow: 0 0 2px rgba(0, 0, 0, .5);
+}
+
+nav {
+    position: fixed;
+    width: @sidebarwidth;
+    background: url('img/patterns/dark_leather.png');
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    .box-shadow;
+    height: 100%;
 }
 
 div#yournewcookbookapp {
-    width: 1000px;
-    margin: auto;
     color: #222;
-    position: absolute;
-    top: 50%;
-    margin-top: -.5 * @height;
-    margin-left: .5 * @minwidth;
     &.recipe {
         background: url('img/patterns/lined_paper.png');
         background-attachment: scroll;
         
         & .recipe-description {
-            margin-bottom: 30px;
             line-height: 1.15em;
             font-size: .95em;
-            padding-top: 11px;
+
+            margin-bottom: 30px;
+            padding-top: 3px;
         }
 
         & .recipe-image {
@@ -51,45 +60,25 @@ div#yournewcookbookapp {
     }
 }
 
-div.content {
-    min-width: @minwidth;
-    max-width: @maxwidth;
-    margin: auto;
-    position: relative;
-
+div.container {
     line-height: 1.24em;
+    .box-shadow;
+    height: 100%;
 
-    padding-left: @sidebarwidth + 25;
-    padding-right: @sidebarwidth + 25;
-
-    h1, h2 {
-        font-weight: bold;
+    div.content {
+        overflow: hidden;
+        height: 100%;
     }
 
     h1 {
-        font-size: 225%;
+        font-size: 212%;
         text-align: center;
-        line-height: 100%;
+        line-height: 105%;
+        padding-bottom: 4px;
     }
+}
 
-    &, & div.side {
-        max-height: @height;
-        min-height: 600px;
-        .box-shadow;
-    }
-
-
-    div.side {
-        margin-left: -@sidebarwidth - 25;
-        width: @sidebarwidth;
-        float: left;
-        clear: none;
-        background: url('img/patterns/dark_leather.png');
-        position: absolute;
-        top: 0;
-        border-bottom-left-radius: 3px;
-        border-bottom-right-radius: 3px;
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
-    }
+div.sidebar {
+    margin-left:0;
+    margin-right:0;
 }
