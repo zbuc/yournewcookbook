@@ -1,0 +1,41 @@
+@import "common/boxshadow";
+
+div.recipe {
+    background: url('img/patterns/lined_paper.png');
+    background-attachment: scroll;
+    
+    .recipe-description {
+        margin-bottom: 30px;
+        line-height: 1.15em;
+        font-size: .95em;
+        padding-top: 11px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .recipe-image {
+        height: 149px;
+        float: left;
+        margin-left: 43px;
+        margin-top: 6px;
+        .box-shadow;
+    }
+
+    .display {
+        display: block;
+    }
+
+    .edit {
+        display: none;
+    }
+
+    &.editing {
+        .display {
+            display: none;
+        }
+
+        .edit {
+            display: block;
+        }
+    }
+}
